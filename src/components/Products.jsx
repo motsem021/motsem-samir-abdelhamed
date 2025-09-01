@@ -16,18 +16,11 @@ function Products() {
   return (
     <div className="products-container">
       {products.map((product) => (
-        <div key={product.id} className="product-card">
-          <div className="product-info">
-            <h3>{product.name}</h3>
-            <p>${product.price}</p>
-          </div>
-          <button
-            className="delete-btn"
-            onClick={() => deleteProduct(product.id)}
-          >
-            Delete
-          </button>
-        </div>
+        <ProductInfo
+          key={product.id}
+          product={product}
+          onDelete={deleteProduct}
+        />
       ))}
     </div>
   );
